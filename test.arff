@@ -1,0 +1,25 @@
+﻿@relation 'weka-ralate'
+
+@attribute 純住宅 numeric
+@attribute 純住宅-建物 numeric
+@attribute 未使用地 numeric
+@attribute 未使用地-建物 numeric
+@attribute 一般道路 numeric
+@attribute 兼商業使用住宅-建物 numeric
+@attribute 興建中-建物 numeric
+@attribute 服務業-建物 numeric
+@attribute 製造業 numeric
+@attribute 公園綠地廣場-建物 numeric
+@attribute 道路相關設施-建物 numeric
+@attribute 營建剩餘土石方 numeric
+@attribute nom_status {F,T}
+
+@data
+0,11.05264,0,0,18.4211,0,0,0,0,0,0,0,T
+2.91892,41.59456,0,0,9.48649,0,0,0,0,0,0,0,T
+6.31251,11.83594,0,0,23.67188,37.87503,0,0,0,0,0,0,T
+4.88136,48.8136,0,0,36.61017,0,0,0,0,0,0,0,T
+0,0,0,0,0,0,0,0,0,0,0,0,T
+27.69233,34.33849,0,0,4.98462,0,0,0,0,0,0,0,T
+0,23.64895,27.89363,0,5.45745,0,0,0,0,0,0,0,T
+0,22.60865,0,0,17.3913,0,0,0,0,0,0,0,T
