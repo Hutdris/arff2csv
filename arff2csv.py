@@ -15,6 +15,7 @@ def arff2csv(arff_path, csv_path=None, _encoding='utf8'):
                     write_sw = True
                 elif '@attribute' in line:
                     attributes.append(line.split()[1])  # @attribute attribute_tag numeric
+    print("Convert {} to {}.".format(arff_path, csv_path))
 
 if __name__ == '__main__':
 
@@ -23,7 +24,6 @@ if __name__ == '__main__':
     args, _ = getopt.getopt(sys.argv[1:], "i:o:")
 
     for o, a in args:
-        print(a)
         if o == '-i' and a:
             input_file = a
         elif o == '-o' and a:
@@ -34,4 +34,3 @@ if __name__ == '__main__':
         exit(0)
 
     arff2csv(input_file, output_file)
-    print('Converted to {}'.format(output_file))
