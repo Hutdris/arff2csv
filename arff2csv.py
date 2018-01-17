@@ -1,9 +1,10 @@
+import sys, getopt
 
-
-def arff2csv(arff_path, _encoding='utf8'):
+def arff2csv(arff_path, csv_path=None, _encoding='utf8'):
     with open(arff_path, 'r', encoding=_encoding) as fr:
         attributes = []
-        csv_path = arff_path[:-4] + 'csv'  # *.arff -> *.csv
+        if csv_path is None:
+            csv_path = arff_path[:-4] + 'csv'  # *.arff -> *.csv
         write_sw = False
         with open(csv_path, 'w', encoding=_encoding) as fw:
             for line in fr.readlines():
@@ -16,5 +17,21 @@ def arff2csv(arff_path, _encoding='utf8'):
                     attributes.append(line.split()[1])  # @attribute attribute_tag numeric
 
 if __name__ == '__main__':
-    arff2csv('test.arff')
 
+    input_file = None
+    output_file= None  
+    args, _ = getopt.getopt(sys.argv[1:], "i:o:")
+
+    for o, a in args:
+        print(a)
+        if o == '-i' and a:
+            input_file = a
+        elif o == '-o' and a:
+            output_file = a
+
+    if not input_file:
+        print("Usage: %s -i input_file.arff [-o output_file.csv])" % sys.argv[0])
+        exit(0)
+
+    arff2csv(input_file, output_file)
+    print('Converted to {}'.format(output_file))
